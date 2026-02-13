@@ -1,0 +1,93 @@
+What is JavaScript (JS)?
+
+High-level → You don’t have to manage memory or handle low-level tasks. You can focus on the logic, and JavaScript takes care of the complex parts behind the scenes.
+Example → You don’t need to manually free memory. JavaScript has automatic garbage collection and memory management.
+
+Lightweight → JavaScript is designed to be fast and simple. It doesn’t need a heavy setup to start running; a browser is enough. You can write a few lines of code in the browser and see the result instantly.
+
+Interpreted → JavaScript is read and executed line by line by the browser. The browser doesn’t fully compile the code into machine code before running it; instead, it reads one line at a time and executes it immediately.
+
+JIT compiled (Just-In-Time) → JavaScript normally starts as an interpreted language, but that can be slow for large or complex programs. So modern JavaScript engines like the V8 engine (Chrome) use JIT compilation.
+
+Example →
+The code first runs line by line as an interpreter.
+Then the engine notices which parts of the code are used frequently (like loops or repeatedly called functions).
+It compiles those "hot" parts into machine code.
+Now those parts run faster because they execute as native machine code.
+
+Multi-paradigm → JavaScript supports multiple programming styles:
+Functional programming → functions like map() and filter()
+Object-oriented programming → classes and objects
+Procedural programming → step-by-step execution
+
+Prototype-based → JavaScript is prototype-based, meaning objects can inherit properties and methods directly from other objects through prototypes (refer to prototype_based.js file).
+
+
+
+<!-- javascript engine -->
+v8 engine developed by google
+it powers google chrome and many other browsers and applications
+
+javascript engine --> v8 is responsible for executing javascript code it takes the js code that u wrote 
+and compiles it into machine code than the computer processor can execute directly
+
+js code -------> v8 engine -------> .parsing
+                                    .ast(abstract syntax tree)
+                                    .bytecode
+                                    .machine code
+
+
+engine have mainly 3 phase to execute js code
+
+1.parsing
+the v8 engine first parse the js code breaking it down into ast abstract syntax tree
+which represent the strcuture of the  code
+
+example like 
+var a = 10;
+var b = 20;
+var c = a + b;
+
+ast = {
+    "type":"Program",
+    "body":[
+        {
+            "type":"VariableDeclaration",
+            "declarations":[
+                {
+                    "type":"VariableDeclarator",
+                    "id":{
+                        "type":"Identifier",
+                        "name":"a"
+                    },
+                    "init":{
+                        "type":"Literal",
+                        "value":10,
+                        "raw":"10"
+                    }
+                },
+                {
+                    "type":"VariableDeclarator",
+                    "id":{
+                        "type":"Identifier",
+                        "name":"b"
+                    },
+                    "init":{
+                        "type":"Literal",
+                        "value":20,
+                        "raw":"20"
+                    }
+                }
+            ],
+            "kind":"var"
+        }
+    ],
+    "sourceType":"script"
+}
+
+
+
+
+
+                                     
+
