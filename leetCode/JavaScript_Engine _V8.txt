@@ -1,0 +1,95 @@
+JavaScript Engine – V8
+
+The V8 engine developed by google powers google chrome and many other browsers and applications
+
+A JavaScript engine like V8 is responsible for executing JavaScript code.
+it takes the code you write and compiles it into machine code that the computer processor can execute directly.
+
+Flow of execution is -->
+
+JavaScript code → V8 engine → Parsing → AST (abstract syntax tree) → Bytecode → Machine code
+
+Main Phases of JavaScript Execution in V8
+1. Parsing
+
+The V8 engine first parses the JavaScript code
+breaking it down into an Abstract Syntax Tree (AST) 
+which represents the structure of the code.
+
+Example:
+
+var a = 10;
+var b = 20;
+var c = a + b;
+
+
+ast representation:
+
+{
+  "type": "Program", 
+  // Root of the AST → whole JS file/script starts from here
+
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      // This tells the engine: variables are being declared
+
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          // One variable declaration entry
+
+          "id": {
+            "type": "Identifier",
+            "name": "a"
+          },
+          // Identifier → variable name is "a"
+
+          "init": {
+            "type": "Literal",
+            "value": 10,
+            "raw": "10"
+          }
+          // Literal → value assigned to variable "a" is 10
+        },
+
+        {
+          "type": "VariableDeclarator",
+          // Second variable declaration
+
+          "id": {
+            "type": "Identifier",
+            "name": "b"
+          },
+          // Variable name is "b"
+
+          "init": {
+            "type": "Literal",
+            "value": 20,
+            "raw": "20"
+          }
+          // Value assigned to "b" is 20
+        }
+      ],
+
+      "kind": "var"
+      // Type of declaration used → "var" (could also be let/const)
+    }
+  ],
+
+  "sourceType": "script"
+  // Tells engine this code is a normal JS script (not a module)
+}
+
+2. Compilation
+
+V8 uses Just-In-Time (JIT) compilation where JavaScript code is compiled into machine code just before the execution.
+
+it uses two main components:
+a.Ignition – a lightweight interpreter that quickly generates bytecode.
+and 
+b.TurboFan – an optimizing compiler that converts bytecode into highly optimized machine code.
+
+3.Garbage Collection
+The V8 engine includes a garbage collector that automatically frees memory that is no longer in use
+helping manage memory efficiently without manual intervention.
