@@ -5,7 +5,7 @@
 let nums = [10,20,30,40];
 let sliced = nums.slice(1,3);
 console.log(sliced);
-console.log(nums);
+console.log(nums);  
 
 
 // splice method--> it modify the array and return the removed element 
@@ -14,3 +14,9 @@ let nums2 = [10,20,30,40];
 let spliced = nums2.splice(1,2,90,91);
 console.log(spliced);
 console.log(nums2);
+
+
+// [ 20, 30 ]
+// [ 10, 20, 30, 40 ]
+// [ 20, 30 ]
+// [ 10, 90, 91, 40 ] 

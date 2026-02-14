@@ -34,6 +34,3 @@ const a = 90;
 // const a = 10; we cant redeclare it will give error
 // const a = 20; we cant reinitialize it will give error
 
-
-
-
