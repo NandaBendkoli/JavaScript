@@ -16,4 +16,3 @@ let arr3 = new Array(3);
 // this does not create an array with single value which is arr3 = [3];
 
 // thats why the best way to createan array is using square bracket
-
