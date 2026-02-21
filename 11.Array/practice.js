@@ -144,19 +144,44 @@ console.log(aCount);
 console.log(bCount);
 console.log(oCount);
 
-
 // same using reduce function
 
-// find max number 
-const max = [10, 25, 5, 40, 15];
+// find max number
+const maxArray = [90, 78, 67, 45, 34, 123, 12];
+let max = maxArray[0];
+console.log(max);
 
-for (let i = 0; i < max.length; i++) {
-    let maxNum = max[i];
-    if (max[i] > maxNum) {
-        return maxNum;
+for (let i = 1; i < maxArray.length; i++) {
+    if (maxArray[i] > max) {
+        max = maxArray[i];
     }
-    
+    console.log("max is ", max);
 }
+
+// flatten array 
+
+//using recursion 
+let falttenArray = [1, 2, [1, 2, 3], [7, 8], [1, 2, 3], 9];
+// o/p = [1,2,1,2,3,7,8,1,2,3,9];
+
+let output = [];
+
+function flatten(arr) {
+    for (let i = 0; i < arr.length; i++) {
+
+        if (Array.isArray(arr[i])) {
+            // recursion
+            flatten(arr[i])
+        }
+        else {
+            output.push(arr[i]);
+        }
+
+
+    }
+    return output;
+}
+console.log(flatten(falttenArray));
 
 
 

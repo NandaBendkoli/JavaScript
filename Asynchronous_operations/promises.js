@@ -18,7 +18,7 @@ createOrder(cart,function(orderId){
 
 
 // then how to proceed to our program from after getting {data : "order id"}
-/** 
+/**  
 promises.then(function(orderId){
     proceedToPayment(orderId);
 });
