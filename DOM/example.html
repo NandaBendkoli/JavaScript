@@ -1,0 +1,113 @@
+<!-- 
+ Most used events
+Event	Kab hota hai
+click	button click
+submit	form submit
+input	typing
+change	value change
+mouseover	mouse leke jao
+keydown	keyboard press
+  -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #form {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #f9f9f9;
+      }
+      .items {
+        margin-top: 20px;
+        padding: 15px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #ffffff;
+      }
+
+      .input-filed {
+        margin: 12px;
+        padding: 12px;
+      }
+      .btn {
+        height: 80px;
+        width: 80px;
+        border: 1px solid black;
+        border-radius: 12%;
+        margin-left: 12px;
+        padding: 12px;
+        background-color: rgb(169, 247, 247);
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form" action="submit-form">
+      <input
+        id="name"
+        class="input-filed"
+        type="text"
+        placeholder="Enter Your name"
+      />
+      <input
+        id="email"
+        class="input-filed"
+        type="text"
+        placeholder="Enter Your email"
+      />
+      <input
+        id="pass"
+        class="input-filed"
+        type="text"
+        placeholder="Enter Your password"
+      />
+      <input
+        id="mob"
+        class="input-filed"
+        type="text"
+        placeholder="Enter Your Mobile"
+      />
+    </form>
+    <div class="items"></div>
+    <button class="btn">Submit</button>
+
+    <script>
+      const name = document.querySelector("#name");
+      const email = document.querySelector("#email");
+      const pass = document.querySelector("#pass");
+      const mob = document.querySelector("#mob");
+      const btn = document.querySelector(".btn");
+
+      const inputs = document.querySelectorAll(".input-filed"); // all inputs select
+      const items = document.querySelector(".items");
+
+      inputs.forEach(function (input) {
+        input.addEventListener("input", function () {
+          console.log(this.value);
+        });
+      });
+      btn.addEventListener("click", function () {
+        items.innerHTML = `
+    <li> NAME : ${name.value}</li>
+    <li> Email : ${email.value}</li>
+    <li> PASS : ${pass.value}</li>
+    <li> moBILE : ${mob.value}</li>
+  `;
+      });
+    </script>
+  </body>
+</html>
